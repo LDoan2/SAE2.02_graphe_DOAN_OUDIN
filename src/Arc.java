@@ -23,4 +23,18 @@ public class Arc {
         this.cout = c;
     }
 
+    /**
+     * get la destination
+     */
+    public String getDest(){
+        return dest;
+    }
+
+    /**
+     * Methode qui get le cout
+     */
+    public double getCout(){
+        return cout;
+    }
+
 }

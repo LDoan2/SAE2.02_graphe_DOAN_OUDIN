@@ -62,4 +62,23 @@ public class GrapheListe implements Graphe {
         }
     }
 
+    /**
+    * Methode permettant de renvoyer l objet en string
+     */
+    public String toString(){
+        String res = "";
+
+        for (int i = 0; i < this.ensNoeuds.size(); i++){
+            res += this.ensNoeuds.get(i).getNom() + " -> ";
+
+            for (int j = 0; j < this.ensNoeuds.get(i).getAdj().size(); j++){
+                res += this.ensNoeuds.get(i).getAdj().get(j).getDest() + "(" + this.ensNoeuds.get(i).getAdj().get(j).getCout() + ")";
+                res += " ";
+            }
+        }
+
+
+        return res;
+    }
+
 }
