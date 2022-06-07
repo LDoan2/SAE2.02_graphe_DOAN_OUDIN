@@ -26,13 +26,21 @@ public class Noeud  {
     public boolean equals(Object o){
         boolean res = true;
 
-        if (this.nom != o){
+        if (this != o){
             res = false;
         }
 
         return res;
     }
 
+    /**
+     * Méthode permettant d ajouter un arc a la liste
+     * @param destination La destination de l arc
+     * @param cout la valeur associée
+     */
+    public void ajouterArc(String destination, double cout){
+        this.adj.add(new Arc(destination, cout));
+    }
 
 
 }
