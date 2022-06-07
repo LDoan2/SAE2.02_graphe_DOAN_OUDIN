@@ -87,6 +87,10 @@ public class GrapheListe implements Graphe {
         return res;
     }
 
+    /**
+     * graph sous la forme digraph
+     * @return string
+     */
     public String digraph() {
         String ch = "digraph {\n";
         for (int i = 0; i < this.ensNoeuds.size(); i++) {
