@@ -9,7 +9,7 @@ public interface Graphe {
     public List<String> listeNoeuds();
 
     /**
-     * Methode qui retourne la liste des arcs
+     * Methode qui retourne la liste des arcs partant du noeud n
      * @param n Le noeud selectionne
      * @return
      */
