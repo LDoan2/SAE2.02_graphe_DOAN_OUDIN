@@ -91,8 +91,7 @@ public class GrapheListe implements Graphe {
         String ch = "digraph {\n";
         for (int i = 0; i < this.ensNoeuds.size(); i++) {
             for (int j = 0; j < this.ensNoeuds.get(i).getAdj().size(); j++) {
-                ch += this.ensNoeuds.get(i).getNom() + " -> " + this.ensNoeuds.get(i).getAdj().get(j).getDest() + "[label = " + this.ensNoeuds.get(i).getAdj().get(j).getCout() + "]\n";
-                ch += " ";
+                ch += this.ensNoeuds.get(i).getNom() + " -> " + this.ensNoeuds.get(i).getAdj().get(j).getDest() + " [label = " + this.ensNoeuds.get(i).getAdj().get(j).getCout() + "]\n";
             }
         }
         ch += "}";

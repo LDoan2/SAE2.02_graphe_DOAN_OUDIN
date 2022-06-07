@@ -31,6 +31,6 @@ public class Main {
         noeuds.add(d);
         noeuds.add(e);
         GrapheListe graphe = new GrapheListe(noeuds);
-        System.out.println(graphe.toString());
+        System.out.println(graphe.digraph());
     }
 }
