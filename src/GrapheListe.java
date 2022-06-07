@@ -82,9 +82,21 @@ public class GrapheListe implements Graphe {
                 res += this.ensNoeuds.get(i).getAdj().get(j).getDest() + "(" + this.ensNoeuds.get(i).getAdj().get(j).getCout() + ")";
                 res += " ";
             }
-            res+="\n";
+            res += "\n";
         }
         return res;
+    }
+
+    public String digraph() {
+        String ch = "digraph {\n";
+        for (int i = 0; i < this.ensNoeuds.size(); i++) {
+            for (int j = 0; j < this.ensNoeuds.get(i).getAdj().size(); j++) {
+                ch += this.ensNoeuds.get(i).getNom() + " -> " + this.ensNoeuds.get(i).getAdj().get(j).getDest() + "[label = " + this.ensNoeuds.get(i).getAdj().get(j).getCout() + "]\n";
+                ch += " ";
+            }
+        }
+        ch += "}";
+        return ch;
     }
 
 }
