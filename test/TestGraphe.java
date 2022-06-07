@@ -30,8 +30,11 @@ public class TestGraphe {
         GrapheListe graphe = new GrapheListe(noeuds);
 
         assertEquals(graphe.suivants("A").size(), 2, "Le nombre d arc n est pas le bon");
+        assertEquals(graphe.suivants("A").get(0).getCout(), 12, "Le cout n'est pas le bon");
+        assertEquals(graphe.suivants("A").get(1).getCout(), 10, "Le cout n'est pas le bon");
         assertEquals(graphe.listeNoeuds().size(), 4, "Le nombre de noeuds n est pas le bon");
     }
+
 
 
 }
