@@ -42,5 +42,21 @@ public class Noeud  {
         this.adj.add(new Arc(destination, cout));
     }
 
+    /**
+     * Getter Nom
+     * @return
+     */
+    public String getNom(){
+        return this.nom;
+    }
+
+    /**
+     * get adj
+     * @return
+     */
+    public List<Arc> getAdj(){
+        return adj;
+    }
+
 
 }

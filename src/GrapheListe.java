@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class GrapheListe implements Graphe {
@@ -17,7 +18,13 @@ public class GrapheListe implements Graphe {
      */
     @Override
     public List<String> listeNoeuds() {
-        return null;
+        ArrayList<String> res = new ArrayList<String>();
+
+        for (int i = 0; i < this.ensNoeuds.size(); i++){
+            res.add(this.ensNoeuds.get(i).getNom());
+        }
+
+        return res;
     }
 
     /**
@@ -27,6 +34,26 @@ public class GrapheListe implements Graphe {
      */
     @Override
     public List<Arc> suivants(String n) {
-        return null;
+
+        List<Arc> res = new ArrayList<Arc>();
+
+        for (int i = 0; i < this.ensNoeuds.size(); i++){
+            if (this.ensNoeuds.get(i).getNom().equals(n)){
+                res = this.ensNoeuds.get(i).getAdj();
+            }
+        }
+
+        return res;
     }
+
+    /**
+     * Methode permettant d ajouter un arc
+     * @param depart le point de départ
+     * @param destination la destination de l arc
+     * @param cout le cout
+     */
+    public void ajouterArc(String depart, String destination, double cout){
+
+    }
+
 }
