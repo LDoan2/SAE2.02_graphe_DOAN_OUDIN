@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * classe main du projet
  */
@@ -9,6 +12,7 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
+        List<Noeud> noeuds = new ArrayList<Noeud>();
         Noeud a = new Noeud("A");
         Noeud b = new Noeud("B");
         Noeud c = new Noeud("C");
@@ -21,5 +25,11 @@ public class Main {
         d.ajouterArc("B",23);
         d.ajouterArc("C",10);
         e.ajouterArc("D",43);
+        noeuds.add(a);
+        noeuds.add(b);
+        noeuds.add(c);
+        noeuds.add(d);
+        noeuds.add(e);
+        GrapheListe graphe = new GrapheListe(noeuds);
     }
 }
