@@ -1,7 +1,8 @@
+import javax.print.DocFlavor;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Noeud {
+public class Noeud  {
 
     /**
      * Le nom du noeud
@@ -20,4 +21,18 @@ public class Noeud {
         this.nom = n;
         this.adj = new ArrayList<>();
     }
+
+    @Override
+    public boolean equals(Object o){
+        boolean res = true;
+
+        if (this.nom != o){
+            res = false;
+        }
+
+        return res;
+    }
+
+
+
 }
