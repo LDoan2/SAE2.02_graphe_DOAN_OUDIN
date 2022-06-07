@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,7 @@ public class Main {
      *
      * @param args
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         List<Noeud> noeuds = new ArrayList<Noeud>();
         Noeud a = new Noeud("A");
         Noeud b = new Noeud("B");
@@ -32,5 +33,8 @@ public class Main {
         noeuds.add(e);
         GrapheListe graphe = new GrapheListe(noeuds);
         System.out.println(graphe.digraph());
+
+        GrapheListe grapheListe = new GrapheListe("documents/Graphes/Graphe1.txt");
+        System.out.println(grapheListe.toString());
     }
 }

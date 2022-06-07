@@ -25,7 +25,7 @@ public class GrapheListe implements Graphe {
      * @param fichier le fichier contenant les informations du graphe
      */
     public GrapheListe(String fichier) throws IOException {
-
+        this.ensNoeuds = new ArrayList<Noeud>();
         BufferedReader reader = new BufferedReader(new FileReader(fichier));
         String temp = reader.readLine();
         int i = 0;
