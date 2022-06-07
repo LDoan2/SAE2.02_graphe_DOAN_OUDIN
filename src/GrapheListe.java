@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,11 +24,21 @@ public class GrapheListe implements Graphe {
      * Constructeur a partir d un fichier
      * @param fichier le fichier contenant les informations du graphe
      */
-    public GrapheListe(String fichier) throws FileNotFoundException {
+    public GrapheListe(String fichier) throws IOException {
 
-        BufferedReader reader = new BufferedReader(new FileReader(fichier))
-
-
+        BufferedReader reader = new BufferedReader(new FileReader(fichier));
+        String temp = reader.readLine();
+        int i = 0;
+        double cout;
+        while(temp != null){
+            String [] ch = temp.split("\t");
+            cout = Double.parseDouble(ch[2]);
+            this.ensNoeuds.add(new Noeud(ch[0]));
+            this.ensNoeuds.get(i).ajouterArc(ch[1],cout);
+            temp = reader.readLine();
+            i += 1;
+        }
+        reader.close();
     }
 
     /**
