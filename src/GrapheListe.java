@@ -1,3 +1,6 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +17,17 @@ public class GrapheListe implements Graphe {
 
     public GrapheListe(List<Noeud> noeuds) {
         this.ensNoeuds = noeuds;
+    }
+
+    /**
+     * Constructeur a partir d un fichier
+     * @param fichier le fichier contenant les informations du graphe
+     */
+    public GrapheListe(String fichier) throws FileNotFoundException {
+
+        BufferedReader reader = new BufferedReader(new FileReader(fichier))
+
+
     }
 
     /**
@@ -101,5 +115,6 @@ public class GrapheListe implements Graphe {
         ch += "}";
         return ch;
     }
+
 
 }
