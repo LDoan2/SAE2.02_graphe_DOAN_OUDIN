@@ -54,6 +54,12 @@ public class GrapheListe implements Graphe {
      */
     public void ajouterArc(String depart, String destination, double cout){
 
+        for (int i = 0; i < this.ensNoeuds.size(); i++){
+
+            if (this.ensNoeuds.get(i).getNom().equals(depart)){
+                this.ensNoeuds.get(i).ajouterArc(destination, cout);
+            }
+        }
     }
 
 }
