@@ -12,19 +12,20 @@ public class GrapheListe implements Graphe {
      */
     private List<Noeud> ensNoeuds;
 
-    public GrapheListe(List<Noeud> noeuds){
+    public GrapheListe(List<Noeud> noeuds) {
         this.ensNoeuds = noeuds;
     }
 
     /**
-     *  Methode permettant de renvoyer la liste des noeurds
+     * Methode permettant de renvoyer la liste des noeurds
+     *
      * @return
      */
     @Override
     public List<String> listeNoeuds() {
         ArrayList<String> res = new ArrayList<String>();
 
-        for (int i = 0; i < this.ensNoeuds.size(); i++){
+        for (int i = 0; i < this.ensNoeuds.size(); i++) {
             res.add(this.ensNoeuds.get(i).getNom());
         }
 
@@ -33,6 +34,7 @@ public class GrapheListe implements Graphe {
 
     /**
      * Methode permettant d'afficher les arcs qui suivants le noeud n
+     *
      * @param n Le noeud selectionne
      * @return
      */
@@ -41,8 +43,8 @@ public class GrapheListe implements Graphe {
 
         List<Arc> res = new ArrayList<Arc>();
 
-        for (int i = 0; i < this.ensNoeuds.size(); i++){
-            if (this.ensNoeuds.get(i).getNom().equals(n)){
+        for (int i = 0; i < this.ensNoeuds.size(); i++) {
+            if (this.ensNoeuds.get(i).getNom().equals(n)) {
                 res = this.ensNoeuds.get(i).getAdj();
             }
         }
@@ -52,36 +54,36 @@ public class GrapheListe implements Graphe {
 
     /**
      * Methode permettant d ajouter un arc
-     * @param depart le point de départ
+     *
+     * @param depart      le point de départ
      * @param destination la destination de l arc
-     * @param cout le cout
+     * @param cout        le cout
      */
-    public void ajouterArc(String depart, String destination, double cout){
+    public void ajouterArc(String depart, String destination, double cout) {
 
-        for (int i = 0; i < this.ensNoeuds.size(); i++){
+        for (int i = 0; i < this.ensNoeuds.size(); i++) {
 
-            if (this.ensNoeuds.get(i).getNom().equals(depart)){
+            if (this.ensNoeuds.get(i).getNom().equals(depart)) {
                 this.ensNoeuds.get(i).ajouterArc(destination, cout);
             }
         }
     }
 
     /**
-    * Methode permettant de renvoyer l objet en string
+     * Methode permettant de renvoyer l objet en string
      */
-    public String toString(){
+    public String toString() {
         String res = "";
 
-        for (int i = 0; i < this.ensNoeuds.size(); i++){
+        for (int i = 0; i < this.ensNoeuds.size(); i++) {
             res += this.ensNoeuds.get(i).getNom() + " -> ";
 
-            for (int j = 0; j < this.ensNoeuds.get(i).getAdj().size(); j++){
+            for (int j = 0; j < this.ensNoeuds.get(i).getAdj().size(); j++) {
                 res += this.ensNoeuds.get(i).getAdj().get(j).getDest() + "(" + this.ensNoeuds.get(i).getAdj().get(j).getCout() + ")";
                 res += " ";
             }
+            res+="\n";
         }
-
-
         return res;
     }
 
