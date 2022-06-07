@@ -12,6 +12,10 @@ public class GrapheListe implements Graphe {
      */
     private List<Noeud> ensNoeuds;
 
+    public GrapheListe(List<Noeud> noeuds){
+        this.ensNoeuds = noeuds;
+    }
+
     /**
      *  Methode permettant de renvoyer la liste des noeurds
      * @return
