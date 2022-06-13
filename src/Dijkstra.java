@@ -40,7 +40,6 @@ Fin
             }
         }
         val.setValeur(depart, 0);
-        noeud.remove(depart);
         while (!noeud.isEmpty()){
             temp = noeud.get(0);
             for (int i = 1; i < noeud.size(); i++) {
@@ -53,7 +52,7 @@ Fin
                 for (int j = 0; j < g.suivants(temp).size(); j++) {
                     if (g.suivants(temp).get(j).getDest().equals(noeud.get(i))){
                         Double d = val.getValeur(temp) + g.suivants(temp).get(j).getCout();
-                        if(val.getValeur(noeud.get(i)) < d ){
+                        if(val.getValeur(noeud.get(i)) > d ){
                             val.setParent(noeud.get(i),temp);
                             val.setValeur(noeud.get(i),d);
                         }
