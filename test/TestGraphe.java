@@ -8,7 +8,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestGraphe {
 
-
+    /**
+     * Test permettant de verifier le graphe
+     */
     @Test
     public void testGraphe(){
         List<Noeud> noeuds = new ArrayList<Noeud>();
@@ -35,6 +37,9 @@ public class TestGraphe {
         assertEquals(graphe.listeNoeuds().size(), 4, "Le nombre de noeuds n est pas le bon");
     }
 
+    /**
+     * Test permettant de verifier si l algo de point fixe fonctionne
+     */
     @Test
     public void testPointFixe(){
         List<Noeud> noeuds = new ArrayList<Noeud>();
@@ -46,7 +51,6 @@ public class TestGraphe {
         a.ajouterArc("B", 12);
         a.ajouterArc("D", 10);
         b.ajouterArc("C", 11);
-        c.ajouterArc("A", 19);
 
         noeuds.add(a);
         noeuds.add(b);
@@ -58,11 +62,19 @@ public class TestGraphe {
         BellmanFord bellmanFord = new BellmanFord();
         Valeur val = bellmanFord.resoudre(graphe, "A");
 
-        /*
-        // On verifie
-        assertEquals();
 
-         */
+        // On verifie
+        assertEquals(val.getParent("A"), null, "Ce noeud n a pas de parent");
+        assertEquals(val.getParent("B"), "A", "Le parent n est pas le bon");
+        assertEquals(val.getParent("C"), "B", "Le parent n est pas le bon");
+        assertEquals(val.getParent("D"), "A", "Le parent n est pas le bon");
+
+        assertEquals(val.getValeur("A"), 0.0, "La valeur n est pas la bonne");
+        assertEquals(val.getValeur("B"), 12.0, "La valeur n est pas la bonne");
+        assertEquals(val.getValeur("C"), 23.0, "La valeur n est pas la bonne");
+        assertEquals(val.getValeur("D"), 10.0, "La valeur n est pas la bonne");
+
+
 
     }
 
