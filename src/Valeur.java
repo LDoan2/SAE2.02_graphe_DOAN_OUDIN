@@ -93,7 +93,7 @@ public class Valeur {
         List<String> list = new ArrayList<String>();
         String temp = destination;
         list.add(destination);
-        for (int i = 1; i < this.parent.size(); i++) {
+        for (int i = 1; i < this.parent.size()-1; i++) {
             if(this.getParent(temp) == null) {
                 list.add(0, this.getParent(temp));
             }
