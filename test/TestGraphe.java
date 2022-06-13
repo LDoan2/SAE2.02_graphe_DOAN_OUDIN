@@ -73,11 +73,44 @@ public class TestGraphe {
         assertEquals(val.getValeur("B"), 12.0, "La valeur n est pas la bonne");
         assertEquals(val.getValeur("C"), 23.0, "La valeur n est pas la bonne");
         assertEquals(val.getValeur("D"), 10.0, "La valeur n est pas la bonne");
-
-
-
     }
 
+    /**
+     * Test permettant de vérifier l algo de Dijkstra
+     */
+    @Test
+    public void testDijkstra(){
+        List<Noeud> noeuds = new ArrayList<Noeud>();
+        Noeud a = new Noeud("A");
+        Noeud b = new Noeud("B");
+        Noeud c = new Noeud("C");
+        Noeud d = new Noeud("D");
+
+        a.ajouterArc("B", 12);
+        a.ajouterArc("D", 10);
+        b.ajouterArc("C", 11);
+
+        noeuds.add(a);
+        noeuds.add(b);
+        noeuds.add(c);
+        noeuds.add(d);
+
+        GrapheListe graphe = new GrapheListe(noeuds);
+
+        Dijkstra dijkstra = new Dijkstra();
+        Valeur val = dijkstra.resoudre(graphe, "A");
+
+        // On verifie
+        assertEquals(val.getParent("A"), null, "Ce noeud n a pas de parent");
+        assertEquals(val.getParent("B"), "A", "Le parent n est pas le bon");
+        assertEquals(val.getParent("C"), "B", "Le parent n est pas le bon");
+        assertEquals(val.getParent("D"), "A", "Le parent n est pas le bon");
+
+        assertEquals(val.getValeur("A"), 0.0, "La valeur n est pas la bonne");
+        assertEquals(val.getValeur("B"), 12.0, "La valeur n est pas la bonne");
+        assertEquals(val.getValeur("C"), 23.0, "La valeur n est pas la bonne");
+        assertEquals(val.getValeur("D"), 10.0, "La valeur n est pas la bonne");
+    }
 
 
 }
