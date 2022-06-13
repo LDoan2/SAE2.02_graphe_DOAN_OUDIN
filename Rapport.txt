@@ -9,3 +9,25 @@ Reponses questions :
 Question 13 : algorithme point fixe
 
 
+Fonction pointFixe(Graphe g InOut, Noeud depart)
+    Debut
+        Pour n dans G faire
+            L(n) <- infini
+            parent(n) <- null
+        FPour
+        L(depart) <- 0
+        continuer <- vrai
+        Tant que continuer faire
+            continuer <- false
+            Pour chaque arc(x, y, poids) de G faire
+                si (L(y) > L(x) + poids alors
+                    L(y) <- L(x) + poids
+                    parent(y) <- x
+                    continuer <- vrai
+                fsi
+            fPour
+        ftq
+    Fin
+
+
+
