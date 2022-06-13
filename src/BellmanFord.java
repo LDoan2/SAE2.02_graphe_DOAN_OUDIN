@@ -3,7 +3,12 @@ import java.util.List;
 
 public class BellmanFord {
 
-
+    /**
+     * Methode de resolution de graphe par point fixe
+     * @param g un graphe sur lequel on se base
+     * @param depart le point de depart du point fixe
+     * @return
+     */
     public Valeur resoudre(Graphe g, String depart){
         // On cree une Valeur qui va servir de res
         Valeur val = new Valeur();

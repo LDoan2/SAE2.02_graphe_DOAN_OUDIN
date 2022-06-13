@@ -28,6 +28,12 @@ Fin Tant que
 Fin
 */
 
+    /**
+     * Methode de resolution de graphe par Dijkstra
+     * @param g un graphe de depart
+     * @param depart un sommet de depart
+     * @return
+     */
     public Valeur resoudre(Graphe g, String depart){
         Valeur val = new Valeur();
         List<String> noeud = new ArrayList<>();

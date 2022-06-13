@@ -88,7 +88,11 @@ public class Valeur {
 
     }
 
-
+    /**
+     * Methode permettant de renvoyer une liste des noeuds par lesquelles on passe pour aller a la destination
+     * @param destination la destination a laquelle on veut se rendre
+     * @return La liste des sommets par lesquelles on passe
+     */
     public List<String> calculerChemin(String destination){
         List<String> list = new ArrayList<String>();
         String temp = destination;
