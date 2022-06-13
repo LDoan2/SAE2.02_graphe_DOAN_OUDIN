@@ -25,7 +25,7 @@ public class BellmanFord {
             for (int i = 0; i < g.listeNoeuds().size(); i++) {
                 for (int j = 0; j < g.suivants(g.listeNoeuds().get(i)).size(); j++) {
                     if(val.getValeur(g.suivants(g.listeNoeuds().get(i)).get(j).getDest()) > val.getValeur(g.listeNoeuds().get(i)) + g.suivants(g.listeNoeuds().get(i)).get(j).getCout()){
-                        val.setValeur(g.suivants(g.listeNoeuds().get(i)).get(j).getDest(),val.getValeur(g.suivants(g.listeNoeuds().get(i)).get(j).getDest()) + g.suivants(g.listeNoeuds().get(i)).get(j).getCout());
+                        val.setValeur(g.suivants(g.listeNoeuds().get(i)).get(j).getDest(),val.getValeur(g.listeNoeuds().get(i)) + g.suivants(g.listeNoeuds().get(i)).get(j).getCout());
                         val.setParent(g.suivants(g.listeNoeuds().get(i)).get(j).getDest(),g.listeNoeuds().get(i));
                         continuer = true;
                     }
