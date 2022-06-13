@@ -11,5 +11,11 @@ public class MainDijkstra {
 
         GrapheListe graphe = new GrapheListe(fichier);
 
+        Dijkstra dijkstra = new Dijkstra();
+        Valeur val = dijkstra.resoudre(graphe, "1");
+
+        System.out.println(val.calculerChemin("10"));
+
+
     }
 }
