@@ -55,6 +55,7 @@ Fin
                         if(val.getValeur(noeud.get(i)) > d ){
                             val.setParent(noeud.get(i),temp);
                             val.setValeur(noeud.get(i),d);
+                            System.out.println(val.toString());
                         }
                     }
                 }
