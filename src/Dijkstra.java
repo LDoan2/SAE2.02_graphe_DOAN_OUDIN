@@ -48,9 +48,16 @@ Fin
                 }
             }
             noeud.remove(temp);
-            for (int i = 0; i < g.suivants(temp).size(); i++) {
-                Double d = val.getValeur(temp) + g.suivants(temp).get(i).getCout();
-                if(d < )
+            for (int i = 0; i < noeud.size(); i++) {
+                for (int j = 0; j < g.suivants(temp).size(); j++) {
+                    if (g.suivants(temp).get(j).getDest().equals(noeud.get(i))){
+                        Double d = val.getValeur(temp) + g.suivants(temp).get(j).getCout();
+                        if(val.getValeur(noeud.get(i)) < d ){
+                            val.setParent(noeud.get(i),temp);
+                            val.setValeur(noeud.get(i),d);
+                        }
+                    }
+                }
             }
         }
 
