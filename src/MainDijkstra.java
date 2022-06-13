@@ -7,7 +7,7 @@ public class MainDijkstra {
 
     public static void main(String[] args) throws IOException {
 
-        String fichier = "../documents/Graphe1.txt";
+        String fichier = "documents/Graphes/Graphe1.txt";
 
         GrapheListe graphe = new GrapheListe(fichier);
 
