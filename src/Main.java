@@ -44,6 +44,13 @@ public class Main {
 
         System.out.println(val.toString());
 
+        System.out.println(val.calculerChemin("C").get(0));
+        System.out.println(val.calculerChemin("C").get(1));
+        System.out.println(val.calculerChemin("C").get(2));
+        System.out.println(val.calculerChemin("C").get(3));
+        System.out.println(val.calculerChemin("C").get(4));
+
+
 
     }
 }
