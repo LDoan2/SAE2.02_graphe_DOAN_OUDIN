@@ -94,7 +94,9 @@ public class Valeur {
         String temp = destination;
         list.add(destination);
         for (int i = 1; i < this.parent.size(); i++) {
-            list.add(0,this.getParent(temp));
+            if(this.getParent(temp) == null) {
+                list.add(0, this.getParent(temp));
+            }
             temp = this.getParent(temp);
         }
         return list;
