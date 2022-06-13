@@ -36,5 +36,14 @@ public class Main {
 
         GrapheListe grapheListe = new GrapheListe("documents/Graphes/Graphe1.txt");
         System.out.println(grapheListe.toString());
+
+        /*
+        BellmanFord bellmanFord = new BellmanFord();
+
+        Valeur val = bellmanFord.resoudre(graphe, "A");
+
+        System.out.println(val.toString());
+
+         */
     }
 }

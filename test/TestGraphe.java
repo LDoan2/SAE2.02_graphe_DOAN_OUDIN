@@ -35,6 +35,37 @@ public class TestGraphe {
         assertEquals(graphe.listeNoeuds().size(), 4, "Le nombre de noeuds n est pas le bon");
     }
 
+    @Test
+    public void testPointFixe(){
+        List<Noeud> noeuds = new ArrayList<Noeud>();
+        Noeud a = new Noeud("A");
+        Noeud b = new Noeud("B");
+        Noeud c = new Noeud("C");
+        Noeud d = new Noeud("D");
+
+        a.ajouterArc("B", 12);
+        a.ajouterArc("D", 10);
+        b.ajouterArc("C", 11);
+        c.ajouterArc("A", 19);
+
+        noeuds.add(a);
+        noeuds.add(b);
+        noeuds.add(c);
+        noeuds.add(d);
+
+        GrapheListe graphe = new GrapheListe(noeuds);
+
+        BellmanFord bellmanFord = new BellmanFord();
+        Valeur val = bellmanFord.resoudre(graphe, "A");
+
+        /*
+        // On verifie
+        assertEquals();
+
+         */
+
+    }
+
 
 
 }
