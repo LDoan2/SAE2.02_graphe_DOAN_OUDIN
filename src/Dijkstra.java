@@ -40,6 +40,7 @@ Fin
             }
         }
         val.setValeur(depart, 0);
+        noeud.remove(depart);
         while (!noeud.isEmpty()){
             temp = noeud.get(0);
             for (int i = 1; i < noeud.size(); i++) {
