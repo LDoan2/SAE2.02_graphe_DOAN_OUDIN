@@ -1,0 +1,28 @@
+OUDIN Clement
+DOAN Lancelot
+
+Rapport Compte Rendu du projet :
+
+
+Reponses questions :
+
+Fonction pointFixe( Graphe g InOut, Noeud depart)
+    Début
+        Q <- {}
+        Pour chaque sommets v de g faire
+            v.distance <- infini
+            v.precedent <- indefini
+        finPour
+
+        depart.distance <- 0
+
+        tant que Q est un ensemble non vide faire
+            u <- le noeud lié à départ ayant la distance minimal
+            Q <- Q/{u}
+            Pour chaque sommets v de Q tel que l'arc (u, v) existe faire
+                D <- u.distance + poids(u, v)
+                v.distance <- D
+                v.precedent <- u
+            finPour
+        ftq
+    Fin
