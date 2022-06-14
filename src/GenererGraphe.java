@@ -3,10 +3,19 @@ import java.util.List;
 
 public class GenererGraphe implements Graphe{
 
+    /**
+     * Liste d'objet noeud permettant de stocker les arcs
+     */
     private List<Noeud> noeuds;
+    /**
+     * Liste contenant le nom des noeuds du graphe
+     */
     private List<String> nom;
 
-
+    /**
+     * Constructeur de la classe GenererGraphe qui genere aleatoirement un graphe
+     * @param taille qui represente le nombre de noeuds dans le graphe
+     */
     public GenererGraphe(int taille){
         // On initialise l'attribut
         this.noeuds = new ArrayList<Noeud>();
@@ -27,16 +36,30 @@ public class GenererGraphe implements Graphe{
         }
     }
 
+    /**
+     * Methode permettant de renvoyer la liste des noeurds
+     *
+     * @return
+     */
     @Override
     public List<String> listeNoeuds() {
         return null;
     }
 
+    /**
+     * Methode permettant d'afficher les arcs qui suivants le noeud n
+     *
+     * @param n Le noeud selectionne
+     * @return
+     */
     @Override
     public List<Arc> suivants(String n) {
         return null;
     }
 
+    /**
+     * Methode permettant de renvoyer l objet en string
+     */
     public String toString() {
         String res = "";
 
@@ -52,6 +75,10 @@ public class GenererGraphe implements Graphe{
         return res;
     }
 
+    /**
+     * graph sous la forme digraph
+     * @return string
+     */
     public String digraph() {
         String ch = "digraph {\n";
         for (int i = 0; i < this.noeuds.size(); i++) {
