@@ -18,7 +18,7 @@ public class GenererGraphe implements Graphe{
         }
 
         for (int j = 0; j < this.noeuds.size(); j++){
-            this.noeuds.get(j).ajouterArc(""+j, Math.random()*100);
+            this.noeuds.get(j).ajouterArc(""+(j+1), Math.random()*100);
 
             if (j+1 > this.noeuds.size()){
                 this.noeuds.get(j).ajouterArc("0", Math.random()*100);
