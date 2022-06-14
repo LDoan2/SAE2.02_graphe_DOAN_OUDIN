@@ -34,4 +34,19 @@ public class GenererGraphe implements Graphe{
     public List<Arc> suivants(String n) {
         return null;
     }
+
+    public String toString() {
+        String res = "";
+
+        for (int i = 0; i < this.noeuds.size(); i++) {
+            res += this.noeuds.get(i).getNom() + " -> ";
+
+            for (int j = 0; j < this.noeuds.get(i).getAdj().size(); j++) {
+                res += this.noeuds.get(i).getAdj().get(j).getDest() + "(" + this.noeuds.get(i).getAdj().get(j).getCout() + ")";
+                res += " ";
+            }
+            res += "\n";
+        }
+        return res;
+    }
 }
