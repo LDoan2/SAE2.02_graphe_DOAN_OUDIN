@@ -1,14 +1,20 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class GenererGraphe implements Graphe{
 
-    List<Noeud> noeuds;
+    private List<Noeud> noeuds;
+    private List<String> nom;
 
 
-    public Graphe generer(int taille){
-        // On cree une liste de noeud temp qui va contenir les noeuds generer aleatoirement
-        // List<Noeud> = new List<Noeud>();
+    public GenererGraphe(int taille){
+        // On initialise l'attribut
+        this.noeuds = new ArrayList<Noeud>();
 
+        // On genere au fur et a mesure des noeuds
+        for (int i = 0; i < taille; i++){
+            this.noeuds.add(new Noeud(""+ i));
+        }
     }
 
     @Override
