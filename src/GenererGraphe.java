@@ -50,4 +50,15 @@ public class GenererGraphe implements Graphe{
         }
         return res;
     }
+
+    public String digraph() {
+        String ch = "digraph {\n";
+        for (int i = 0; i < this.noeuds.size(); i++) {
+            for (int j = 0; j < this.noeuds.get(i).getAdj().size(); j++) {
+                ch += this.noeuds.get(i).getNom() + " -> " + this.noeuds.get(i).getAdj().get(j).getDest() + " [label = " + this.noeuds.get(i).getAdj().get(j).getCout() + "]\n";
+            }
+        }
+        ch += "}";
+        return ch;
+    }
 }
