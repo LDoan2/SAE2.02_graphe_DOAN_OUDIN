@@ -40,7 +40,7 @@ public class Main {
 
         BellmanFord bellmanFord = new BellmanFord();
         long debut = System.nanoTime();
-        Valeur val = bellmanFord.resoudre(graphe, "A");
+        Valeur val = bellmanFord.resoudre(grapheListe, "1");
         long fin = System.nanoTime();
         long duree = fin - debut;
 
