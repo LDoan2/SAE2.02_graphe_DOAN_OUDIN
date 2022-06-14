@@ -100,8 +100,8 @@ public class Valeur {
         for (int i = 1; i < this.parent.size(); i++) {
             if(this.getParent(temp) != null) {
                 list.add(0, this.getParent(temp));
+                temp = this.getParent(temp);
             }
-            temp = this.getParent(temp);
         }
         return list;
     }

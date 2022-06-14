@@ -43,15 +43,12 @@ public class Main {
         Valeur val = bellmanFord.resoudre(graphe, "A");
 
 
-/*
+
         System.out.println(val.toString());
 
-        System.out.println(val.calculerChemin("C").get(0));
-        System.out.println(val.calculerChemin("C").get(1));
-        System.out.println(val.calculerChemin("C").get(2));
-        System.out.println(val.calculerChemin("C").get(3));
-        System.out.println(val.calculerChemin("C").get(4));
-*/
+        System.out.println(val.calculerChemin("C"));
+
+
 
 
     }
