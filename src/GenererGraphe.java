@@ -14,6 +14,7 @@ public class GenererGraphe implements Graphe{
         // On genere au fur et a mesure des noeuds
         for (int i = 0; i < taille; i++){
             this.noeuds.add(new Noeud(""+ i));
+            this.nom.add(""+ i);
         }
 
         for (int j = 0; j < this.noeuds.size(); j++){
