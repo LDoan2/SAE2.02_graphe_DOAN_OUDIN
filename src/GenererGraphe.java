@@ -10,6 +10,7 @@ public class GenererGraphe implements Graphe{
     public GenererGraphe(int taille){
         // On initialise l'attribut
         this.noeuds = new ArrayList<Noeud>();
+        this.nom = new ArrayList<String>();
 
         // On genere au fur et a mesure des noeuds
         for (int i = 0; i < taille; i++){
@@ -18,10 +19,10 @@ public class GenererGraphe implements Graphe{
         }
 
         for (int j = 0; j < this.noeuds.size(); j++){
-            this.noeuds.get(j).ajouterArc(""+(j+1), Math.random()*100);
+            this.noeuds.get(j).ajouterArc(""+(j+1), Math.round(Math.random()*100));
 
             if (j+1 > this.noeuds.size()){
-                this.noeuds.get(j).ajouterArc("0", Math.random()*100);
+                this.noeuds.get(j).ajouterArc("0", Math.round(Math.random()*100));
             }
         }
     }
