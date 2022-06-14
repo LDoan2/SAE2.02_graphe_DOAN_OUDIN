@@ -20,18 +20,15 @@ public class GenererGraphe implements Graphe{
         // On initialise l'attribut
         this.noeuds = new ArrayList<Noeud>();
         this.nom = new ArrayList<String>();
-
         // On genere au fur et a mesure des noeuds
         for (int i = 0; i < taille; i++){
             this.noeuds.add(new Noeud(""+ i));
             this.nom.add(""+ i);
         }
 
-        for (int j = 0; j < this.noeuds.size(); j++){
-            if (j+1 > this.noeuds.size()-1){
-                this.noeuds.get(j).ajouterArc("0", Math.round(Math.random()*100));
-            }else{
-                this.noeuds.get(j).ajouterArc(""+(j+1), Math.round(Math.random()*100));
+        for (int j = this.noeuds.size()-1; j >= 0; j--){
+            for (int i = j-1; i >= 0; i--) {
+                this.noeuds.get(i).ajouterArc(this.noeuds.get(j).getNom(),Math.round(Math.random()*100));
             }
         }
     }
@@ -43,7 +40,13 @@ public class GenererGraphe implements Graphe{
      */
     @Override
     public List<String> listeNoeuds() {
-        return null;
+        ArrayList<String> res = new ArrayList<String>();
+
+        for (int i = 0; i < this.noeuds.size(); i++) {
+            res.add(this.noeuds.get(i).getNom());
+        }
+
+        return res;
     }
 
     /**
@@ -54,7 +57,15 @@ public class GenererGraphe implements Graphe{
      */
     @Override
     public List<Arc> suivants(String n) {
-        return null;
+        List<Arc> res = new ArrayList<Arc>();
+
+        for (int i = 0; i < this.noeuds.size(); i++) {
+            if (this.noeuds.get(i).getNom().equals(n)) {
+                res = this.noeuds.get(i).getAdj();
+            }
+        }
+
+        return res;
     }
 
     /**
