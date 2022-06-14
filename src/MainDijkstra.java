@@ -12,10 +12,12 @@ public class MainDijkstra {
         GrapheListe graphe = new GrapheListe(fichier);
 
         Dijkstra dijkstra = new Dijkstra();
+
+        long debut = System.nanoTime();
         Valeur val = dijkstra.resoudre(graphe, "1");
-
-        System.out.println(val.calculerChemin("10"));
-
-
+        long fin = System.nanoTime();
+        long duree = fin - debut;
+        System.out.println(val.toString());
+        System.out.println(duree);
     }
 }

@@ -39,16 +39,14 @@ public class Main {
 
 
         BellmanFord bellmanFord = new BellmanFord();
-
+        long debut = System.nanoTime();
         Valeur val = bellmanFord.resoudre(graphe, "A");
-
+        long fin = System.nanoTime();
+        long duree = fin - debut;
 
 
         System.out.println(val.toString());
-
-        System.out.println(val.calculerChemin("C"));
-
-
+        System.out.println(duree);
 
 
     }
